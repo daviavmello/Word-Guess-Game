@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+</head>
+
+<body>
+    <div>
+        <p id="directions-text">Press any key to get started!</p>
+        <p>Guess what word I'm thinking of:</p>
+        <br>
+        <p id="wins-text"></p>
+        <br>
+        <p id="losses-text"></p>
+        <br>
+        <p id="guesses-left-text"></p>
+        <br>
+        <p id="guesses-text"></p>
+    </div>
+
+    <script>
+        
+        var compChoices = ["acrobat", "bike", "camera", "demogorgon", "eleven", "friends", "government", "hopper", "ives", "joyce", "kids", "locked", "mouthbreather", "nancy", "one", "pudding","queen", "radio", "soundtrack", "teacher", "upside", "van", "wrist", "young", "zero"];
+
+        var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+
+        wins = 0;
+        losses = 0;
+        guessesLeft = 5;
+        guesses = "";
+
+
+        var directionsText = document.getElementById("directions-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var guessesLeftText = document.getElementById("guesses-left-text");
+        var guessesText = document.getElementById("guesses-text");
+
+
+        document.onkeyup = function(event) {
+        
+        var userGuess = event.key;
+
+
+        var compWord = compChoices[Math.floor(Math.random() * compChoices.length)];
+
+        console.log(compChoices);
+        console.log(compWord);
+
+        if (userGuess === compChoices) {
+            wins++;
+            
+        }
+
+
+
+        else {
+            losses++;
+        }
+        // } belongs to document.onkeyup = function(event)
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
